@@ -1,12 +1,12 @@
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 #container {
   height: 500px;
   width: 500px;
-  border: 1px solid yellow;
+  border: 5px solid yellow;
   margin: 0 auto;
   padding: 0;
   display: grid;
@@ -14,9 +14,8 @@
   grid-template-rows: repeat(16, 1fr);
 }
 .gridsq {
-  background-color: aqua;
-  width: 1.95em;
-  height: 1.95em;
-  margin-bottom: 0px;
-  border: 1px solid blue;
+  background-color: rgb(240, 240, 240);
+  width: 1.92em;
+  height: 1.92em;
+  /* border: 1px solid blue; */
 }
