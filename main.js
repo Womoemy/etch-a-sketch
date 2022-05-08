@@ -17,7 +17,7 @@ function createGrid() {
 
         container_div.appendChild(gridsq_div);
 
-        gridsq_div.addEventListener('mouseenter', changeColor);
+        gridsq_div.addEventListener('mouseover', changeColor);
     }
 }
 

@@ -1,12 +1,19 @@
+:root {
+  --grid-width: 500px;
+  --grid-height: 500px;
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+h1 {
+  text-align: center;
+}
 #container {
-  height: 500px;
-  width: 500px;
-  border: 5px solid yellow;
+  height: var(--grid-height);
+  width: var(--grid-width);
+  border: 10px solid yellow;
   margin: 0 auto;
   padding: 0;
   display: grid;
@@ -15,7 +22,4 @@
 }
 .gridsq {
   background-color: rgb(240, 240, 240);
-  width: 1.92em;
-  height: 1.92em;
-  /* border: 1px solid blue; */
 }
