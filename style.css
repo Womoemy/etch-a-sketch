@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap');
+
 :root {
   --grid-width: 500px;
   --grid-height: 500px;
+}
+body {
+  font-family: 'Bellota Text', cursive;
 }
 * {
   box-sizing: border-box;
@@ -10,16 +15,15 @@
 h1 {
   text-align: center;
 }
-#container {
+#grid {
   height: var(--grid-height);
   width: var(--grid-width);
   border: 10px solid yellow;
   margin: 0 auto;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
 }
-.gridsq {
+.gridsqs {
   background-color: rgb(240, 240, 240);
+  /* border: 1px solid blue; */
 }

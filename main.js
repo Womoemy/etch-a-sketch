@@ -8,21 +8,53 @@
  * grid-template-columns and grid-template-rows repeat function as the required
  * integer part. 
  */
-const container_div = document.getElementById("container");
+const DEFAULT_SIZE = 16;
 
-function createGrid() {
-    for (let i = 0; i < (16*16); i++) {
-        const gridsq_div = document.createElement("div");
-        gridsq_div.classList.add("gridsq");
+let gridsize = DEFAULT_SIZE;
 
-        container_div.appendChild(gridsq_div);
+const grid_div = document.getElementById("grid");
+const grid32_btn = document.getElementById("grid32");
+const grid64_btn = document.getElementById("grid64");
 
-        gridsq_div.addEventListener('mouseover', changeColor);
-    }
+// Event listeners
+grid32_btn.addEventListener('click', create32by32grid);
+grid64_btn.addEventListener('click', create64by64grid);
+
+// Functions
+function clearGrid() {
+    grid_div.innerHTML = "";
 }
 
+function create64by64grid() {
+    gridsize = 64;
+    clearGrid();
+    createGrid(gridsize);
+}
+
+function create32by32grid() {
+    gridsize = 32;
+    clearGrid();
+    createGrid(gridsize);
+}
+
+function createGrid(size) {
+    grid_div.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid_div.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < (size * size); i++) {
+        const gridsqs_div = document.createElement("div");
+        gridsqs_div.classList.add("gridsqs");
+        gridsqs_div.addEventListener('mouseover', changeColor);
+        grid_div.appendChild(gridsqs_div);
+    }
+}
 function changeColor(e) {
     e.target.style.backgroundColor = 'black';
 }
 
-createGrid();
+createGrid(DEFAULT_SIZE);
+// gridsize_range.oninput = function() {
+//     createGrid(gridsize_range.value);
+//     gridvalue_span.innerHTML = this.value + " x " + this.value;
+
+// };
